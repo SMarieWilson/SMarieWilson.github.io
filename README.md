@@ -32,7 +32,7 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 ### Step 1: Set up the machines
 
 I created a Kali Linux and Windows 10 virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine. The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine. The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31. 
-Configuring Splunk included creatine an index and naming it "endpoint" in order to ingest Systmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
+Configuring Splunk included creating an index and naming it "endpoint" in order to ingest Sysmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
 
 
 ![Security_Event_Analysis drawio](https://github.com/user-attachments/assets/d1739c7f-0a4f-4d8a-a2e5-5ac5a272977f)
@@ -62,8 +62,17 @@ Configuring Splunk included creatine an index and naming it "endpoint" in order 
 ![windows_ping_kalilinux](https://github.com/user-attachments/assets/e81a7845-8874-49fa-abbb-53bd12fa916e)
 
 (Pinging the Attacker machine from the Target machine)
+<br><br><br>
+![installed_sysmon_PS](https://github.com/user-attachments/assets/94f3b311-a138-40ba-9a03-d2a61e0f1b4f)
 
+(Sysmon64 executed and installed)
+<br><br><br>
+![index_endpoint](https://github.com/user-attachments/assets/63b70eb0-50b4-42fc-bdda-77f5e69ce325)
 
+(Sysmon index named "endpoint" created)
+<br><br><br>
+![rdp_on](https://github.com/user-attachments/assets/45488b6a-a507-4c44-b55c-a2c21218d20b)
 
-
+(Remote Desktop enabled)
+<br><br><br>
 
