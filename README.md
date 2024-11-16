@@ -1,4 +1,4 @@
-# Detection Lab
+# Security Event Analysis
 
 ## Objective
 
