@@ -27,11 +27,12 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 
 
 ## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
 
-Every screenshot should have some text explaining what the screenshot is about.
+VirtualBox with Kali Linux and Windows 10 installed, along with configured Splunk and Sysmon on the Windows machine.
+The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine.
+The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31.
+Splunk and Sysmon were installed on the Windows machine.
 
-Example below.
+![Security_Event_Analysis drawio](https://github.com/user-attachments/assets/324005b5-6c35-4d33-96ff-e421dbc0c953) 
 
-*Ref 1: Network Diagram*
-
+(Network diagram)
