@@ -75,4 +75,8 @@ Configuring Splunk included creating an index and naming it "endpoint" in order 
 
 (Remote Desktop enabled)
 <br><br><br>
+![nmap_scan](https://github.com/user-attachments/assets/6c95cb6a-5ff4-49dd-9714-4ec64462bc09)
+
+(Nmap scan ran on the Target machine to discover open ports)
+<br><br><br>
 
