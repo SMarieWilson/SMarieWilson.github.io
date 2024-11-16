@@ -18,6 +18,7 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 - VirtualBox: For setting up virtual machines running Kali Linux and Windows.
 - Splunk: For ingesting, indexing, and analyzing Sysmon logs.
 - Sysmon: For generating detailed telemetry on system events.
+- PowerShell: For executing Sysmon executable to install the service.
 - Task Manager and Command Prompt: For verifying network connections and inspecting process details on the Windows machine.
 - nmap: For port scanning and reconnaissance.
 - msfvenom: For creating a reverse TCP shell payload and generating malware.
@@ -28,6 +29,8 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 
 ## Steps
 
+### Step 1
+
 VirtualBox with Kali Linux and Windows 10 installed, along with configured Splunk and Sysmon on the Windows machine.
 The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine.
 The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31.
@@ -36,3 +39,5 @@ Splunk and Sysmon were installed on the Windows machine.
 ![Security_Event_Analysis drawio](https://github.com/user-attachments/assets/324005b5-6c35-4d33-96ff-e421dbc0c953) 
 
 (Network diagram)
+
+
