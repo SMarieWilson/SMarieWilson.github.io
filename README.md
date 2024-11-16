@@ -31,13 +31,40 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 
 ### Step 1
 
-VirtualBox with Kali Linux and Windows 10 installed, along with configured Splunk and Sysmon on the Windows machine.
+I created a Kali Linux and a Windows 10 virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine.
 The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine.
 The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31.
-Splunk and Sysmon were installed on the Windows machine.
 
-![Security_Event_Analysis drawio](https://github.com/user-attachments/assets/324005b5-6c35-4d33-96ff-e421dbc0c953) 
+
+![Security_Event_Analysis drawio](https://github.com/user-attachments/assets/d1739c7f-0a4f-4d8a-a2e5-5ac5a272977f)
 
 (Network diagram)
+<br><br><br>
+![internal_network](https://github.com/user-attachments/assets/2df1ae2d-ffed-4e60-8069-ee12cba84a52)
+
+(Internal Network created)
+<br><br><br>
+![windows_ipv4](https://github.com/user-attachments/assets/0c3c7af4-44c0-4b0f-8aa4-5ad6273cffd4)
+
+(IP address assigned to Target machine)
+<br><br><br>
+![ipconfig_1](https://github.com/user-attachments/assets/aba1096d-e398-490b-b6a5-49c83f2fca83)
+
+(ipconfig shows the assigned IP address)
+<br><br><br>
+![kalilinux_ipv4](https://github.com/user-attachments/assets/f0f277d3-7e95-4e11-b58f-595154721603)
+
+(IP address assigned to the Attacker machine)
+<br><br><br>
+![ipa_1](https://github.com/user-attachments/assets/e6e73321-1e16-4f9a-87e3-b108e7572b4c)
+
+(ip a shows the assigned IP address)
+<br><br><br>
+![windows_ping_kalilinux](https://github.com/user-attachments/assets/e81a7845-8874-49fa-abbb-53bd12fa916e)
+
+(Pinging the Attacker machine from the Target machine)
+
+
+
 
 
