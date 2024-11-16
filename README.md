@@ -29,11 +29,10 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 
 ## Steps
 
-### Step 1
+### Step 1: Set up the machines
 
-I created a Kali Linux and a Windows 10 virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine.
-The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine.
-The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31.
+I created a Kali Linux and Windows 10 virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine. The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine. The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31. 
+Configuring Splunk included creatine an index and naming it "endpoint" in order to ingest Systmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
 
 
 ![Security_Event_Analysis drawio](https://github.com/user-attachments/assets/d1739c7f-0a4f-4d8a-a2e5-5ac5a272977f)
