@@ -90,9 +90,14 @@ I used msfvenom to create malware, selecting windows/x64/meterpreter_reverse_tcp
 
 ### Step 3: Configuring the handler
 
-I opened up Metasploit with msfconsole and set up a multi-handler using exploit/multi/handler, putting me in the exploit itself and changing the payload from generic shell to reverse TCP. I changed lhost to the Attacker machine's IP address.
+I opened up Metasploit with msfconsole and set up a multi-handler using exploit/multi/handler, putting me in the exploit itself and changing the payload from generic shell to reverse TCP. I changed lhost to the Attacker machine's IP address. I started the handler to listen for incoming connections by typing "exploit."
 
 ![updated_lhost](https://github.com/user-attachments/assets/4f3f1c98-1efc-454d-839c-d2aec2520826)
 
 (Malware payload is changed from generic to reverse TCP and lhost is changed to Attacker machine's IP address)
+<br><br><br>
+![handler_meterpreter_session](https://github.com/user-attachments/assets/d98490f6-6b2b-4388-9189-30824c24572d)
+
+(Start handler)
+<br><br><br>
 
