@@ -31,7 +31,7 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 
 ### Step 1: Set up the machines
 
-I created a Kali Linux and Windows 10 virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine. The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine. The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31. Configuring Splunk included creating an index and naming it "endpoint" in order to ingest Sysmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
+I created a Kali Linux (Attacker) and Windows 10 (Target) virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine. The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine. The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31. Configuring Splunk included creating an index and naming it "endpoint" in order to ingest Sysmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
 
 
 ![Security_Event_Analysis drawio](https://github.com/user-attachments/assets/d1739c7f-0a4f-4d8a-a2e5-5ac5a272977f)
@@ -126,5 +126,15 @@ I started a Python HTTP server on the Attacker machine to share the malware on t
 (Malware executed and running on the Target machine)
 <br><br><br>
 
+### Step 5: Interacting with the compromised Windows machine
 
+I looked at the handler on the Attacker machine to confirm an open shell and then established a shell to the Target machine. I then ran commands on the Target machine (i.e., net user, net localgroup, and ipconfig) from the Attacker machine to simulate attacker activity and generate telemetry.
 
+![meterpreter_shell](https://github.com/user-attachments/assets/ec391f41-bfbe-453a-b606-d58d95e85017)
+
+(Shell on the Attacker machine running commands on the Target machine)
+<br><br><br>
+![ipconfig_2_from_kali](https://github.com/user-attachments/assets/51d34f7e-41bb-4056-a647-7bc7399fea57)
+
+(ipconfig command ran on Target machine from Attacker machine)
+<br><br><br>
