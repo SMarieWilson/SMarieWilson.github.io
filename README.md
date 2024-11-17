@@ -29,7 +29,7 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 
 ## Steps
 
-### Step 1: Set up the machines
+### Step 1: Setting up the machines
 
 I created a Kali Linux (Attacker) and Windows 10 (Target) virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine. The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine. The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31. Configuring Splunk included creating an index and naming it "endpoint" in order to ingest Sysmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
 
@@ -138,3 +138,24 @@ I looked at the handler on the Attacker machine to confirm an open shell and the
 
 (ipconfig command ran on Target machine from Attacker machine)
 <br><br><br>
+
+### Step 6: Analyzing telemetry in Splunk
+
+In Splunk, I queried the Attacker machine's IP address, the malware name, and the parent GUID to see the events fed into the "endpoint" index.
+
+![splunk_malware_search](https://github.com/user-attachments/assets/f54e150d-38ca-4f44-b3d3-68ee8c1948d2)
+
+(Malware query in Splunk)
+<br><br><br>
+![splunk_EventCode-1_process](https://github.com/user-attachments/assets/8669524c-1120-49ed-b5ce-676d72f6cd62)
+
+(Event code 1: Process creation)
+<br><br><br>
+![Splunk_EventCode-1_parent_guid_search](https://github.com/user-attachments/assets/43c7118d-8853-47ba-a6d5-6af4b9a55708)
+
+(GUID query in Splunk)
+<br><br><br>
+![Splunk_EventCode-1_parent_guid_search_result](https://github.com/user-attachments/assets/fa8309ee-4ea7-41d5-a085-6c2b8aa244a8)
+
+(Parent GUID query result in Splunk)
+
