@@ -22,7 +22,7 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 - Task Manager and Command Prompt: For verifying network connections and inspecting process details on the Windows machine.
 - nmap: For port scanning and reconnaissance.
 - msfvenom: For creating a reverse TCP shell payload and generating malware.
-- Metasploit Framework: Specifically the multi-handler for managing Command and Control (C2) connections.
+- Metasploit Framework: Specifically, the multi-handler for managing Command and Control (C2) connections.
 - Python (HTTP Server): For hosting and distributing the malware.
 - Windows Defender: To disable real-time protection for testing purposes.
 
@@ -31,7 +31,7 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 
 ### Step 1: Setting up the machines
 
-I created a Kali Linux (Attacker) and Windows 10 (Target) virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine. The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine. The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31. Configuring Splunk included creating an index and naming it "endpoint" in order to ingest Sysmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
+I created Kali Linux (Attacker) and Windows 10 (Target) virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine. The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine. The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31. Configuring Splunk included creating an index and naming it "endpoint" in order to ingest Sysmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
 
 
 ![Security_Event_Analysis drawio](https://github.com/user-attachments/assets/d1739c7f-0a4f-4d8a-a2e5-5ac5a272977f)
@@ -103,7 +103,7 @@ I opened up Metasploit with msfconsole and set up a multi-handler using exploit/
 
 ### Step 4: Setting up file sharing on Kali and executing the malware on Windows
 
-I started a Python HTTP server on the Attacker machine to share the malware on the Target machine. I disabled Windows Defender real-time protection on the Target machine. I then accessed the web browser to download and execute the malware on the Target machine. I ran netstat -anob to confirm a connection to the Attacker machine's IP and listening port and acertain the process ID of the running malware.
+I started a Python HTTP server on the Attacker machine to share the malware on the Target machine. I disabled Windows Defender real-time protection on the Target machine. I then accessed the web browser to download and execute the malware on the Target machine. I ran netstat -anob to confirm a connection to the Attacker machine's IP and listening port and ascertain the process ID of the running malware.
 
 ![python_http_server(2)](https://github.com/user-attachments/assets/6073597d-992d-4bfd-b178-9b1157a918b2)
 
