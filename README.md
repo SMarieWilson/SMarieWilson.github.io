@@ -31,8 +31,7 @@ The primary purpose of this project is to simulate an attack scenario in a contr
 
 ### Step 1: Set up the machines
 
-I created a Kali Linux and Windows 10 virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine. The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine. The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31. 
-Configuring Splunk included creating an index and naming it "endpoint" in order to ingest Sysmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
+I created a Kali Linux and Windows 10 virtual machines on VirtualBox and configured Splunk and Sysmon on the Windows machine. The two virtual machines were configured to reside on the same internal network, eliminating Internet connection and access to the host machine. The target Windows machine was assigned the IP address 192.168.2.30 and the attacker Kali Linux machine was assigned the IP address 192.168.2.31. Configuring Splunk included creating an index and naming it "endpoint" in order to ingest Sysmon logs and the Splunk add-on for Sysmon was enabled to parse the logs. Remote Desktop was enabled on the Target machine to open Port 3389.
 
 
 ![Security_Event_Analysis drawio](https://github.com/user-attachments/assets/d1739c7f-0a4f-4d8a-a2e5-5ac5a272977f)
@@ -79,4 +78,21 @@ Configuring Splunk included creating an index and naming it "endpoint" in order 
 
 (Nmap scan ran on the Target machine to discover open ports)
 <br><br><br>
+
+### Step 2: Creating and Configuring malware
+
+I used msfvenom to create malware, selecting windows/x64/meterpreter_reverse_tcp as the payload. The Attacker machine's IP address was specified as the listening host (lhost) and the default Port 4444 was used as the listening port (lport). The malware was saved as an executable named giftList.pdf.exe.
+
+![malware_created](https://github.com/user-attachments/assets/13762ba1-ca05-4ef6-94f1-a1922fa1a124)
+
+(Reverse TCP malware created)
+<br><br><br>
+
+### Step 3: Configuring the handler
+
+I opened up Metasploit with msfconsole and set up a multi-handler using exploit/multi/handler, putting me in the exploit itself and changing the payload from generic shell to reverse TCP. I changed lhost to the Attacker machine's IP address.
+
+![updated_lhost](https://github.com/user-attachments/assets/4f3f1c98-1efc-454d-839c-d2aec2520826)
+
+(Malware payload is changed from generic to reverse TCP and lhost is changed to Attacker machine's IP address)
 
