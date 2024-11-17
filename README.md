@@ -101,3 +101,30 @@ I opened up Metasploit with msfconsole and set up a multi-handler using exploit/
 (Start handler)
 <br><br><br>
 
+### Step 4: Setting up file sharing on Kali and executing the malware on Windows
+
+I started a Python HTTP server on the Attacker machine to share the malware on the Target machine. I disabled Windows Defender real-time protection on the Target machine. I then accessed the web browser to download and execute the malware on the Target machine. I ran netstat -anob to confirm a connection to the Attacker machine's IP and listening port and acertain the process ID of the running malware.
+
+![python_http_server(2)](https://github.com/user-attachments/assets/6073597d-992d-4bfd-b178-9b1157a918b2)
+
+(Python HTTP server started)
+<br><br><br>
+![real-time_protection_off](https://github.com/user-attachments/assets/1de9ed11-35a2-4e9e-83ed-0dc8a6a08269)
+
+(Disabled Windows Defender real-time protection)
+<br><br><br>
+![access_malware_windows](https://github.com/user-attachments/assets/25902f71-a4f3-4af4-98e5-971b5d036102)
+
+(Web browser accessed on the Target machine to download the malware)
+<br><br><br>
+![netstat_kalilinux](https://github.com/user-attachments/assets/9095dfac-da95-4d20-81b8-f59c8bcf714e)
+
+(Netstat -anob ran to confirm connection to Attacker machine's IP and listening port and to identify the process ID)
+<br><br><br>
+![malware_task_manager](https://github.com/user-attachments/assets/5fd13ffd-9e39-4d96-b9e6-54a4348b50b6)
+
+(Malware executed and running on the Target machine)
+<br><br><br>
+
+
+
